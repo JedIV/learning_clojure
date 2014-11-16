@@ -30,6 +30,16 @@
 ;value of a null set! 
 (def visitors (ref #{}))
 
+; crh:
+; defn is just a shortcut!
+; user=> (def def-time (fn [] (System/currentTimeMillis)))
+; user=> (def-time)
+; 1416110991763
+; user=> (defn defn-time [] (System/currentTimeMillis))
+; user=> (defn-time)
+; 1416111008754
+
+
 ;Alter we change what is stored in visitors, or really 
 ;we are creating a new data set and having the reference
 ;point to that instead!
