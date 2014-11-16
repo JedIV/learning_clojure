@@ -81,6 +81,20 @@
 ;this quoting thing is fucking weird
 (require 'clojure.contrib.str-utils)
 
+; crh:
+; I had trouble with the quoting thing too... in Common Lisp it's the same way.
+; It's a "reader macro" so you can tell it to not actually evaluate the form,
+; but rather just return it... in the following example, each list has a function
+; (the +) and two numbers.  The first list is unquoted, so the + operates on the
+; 2 and the 3.  In the second, it just returns the list.
+
+; user=> (+ 2 3)
+; 5
+; user=> '(+ 2 3)
+; (+ 2 3)
+
+; That way, you can build something that doesn't immediately run but instead you can
+; pass the form (in this case a list) around instead of it being evaluated by the reader.
 
 
 
